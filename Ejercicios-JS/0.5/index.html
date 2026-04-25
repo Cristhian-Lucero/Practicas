@@ -8,17 +8,34 @@
 </head>
 <body>
     <div>
-        <label for="objeto"></label>
-        <input type="text" name="" id="objeto">
-        <label for="monto"></label>
-        <input type="number" name="" id="monto">
-        <label for="categoria"></label>
-        <input type="text" name="" id="categoria">
+        <div>
+            <label for="objeto">Objeto:</label>
+            <input type="text" name="" id="objeto">
+        </div>
+        <div>
+            <label for="monto">Monto:</label>
+            <input type="number" name="" id="monto">
+        </div>
+        <div>
+            <label for="categoria">Categoría:</label>
+            <input type="text" name="" id="categoria">
+        </div>
+        <button id="agregar">Agregar</button>
     </div>
     <div>
         <ul id="lista">
-
         </ul>
+    </div>
+    <div>
+        <span>Total:</span>
+        <span id="total">-</span>
+        <span>Promedio:</span>
+        <span id="promedio">-</span>
+        <span>Caro:</span>
+        <span id="caro">-</span>
+    </div>
+    <div id="resumen">
+        
     </div>
     <script src="script.js"></script>
 </body>
