@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  background: #222;
+  font-family: system-ui;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+strong {
+  color: #1ba1df;
+}
+span {
+  color: #1ba1df63;
+}
