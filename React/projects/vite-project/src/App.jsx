@@ -1,3 +1,4 @@
+import './App.css'
 import { TwitterFollowCard } from "./TwitterFollowCard"
 export default function App () {
   return (

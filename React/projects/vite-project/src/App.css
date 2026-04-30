@@ -1,0 +1,22 @@
+.datos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.seguir{
+    border-radius: 15px;
+}
+.seguir.is-following{
+    background-color: green;
+}
+.seguir.is-following:hover {
+    background-color: red;
+}
+.seguir:hover {
+    background-color: aqua;
+}
