@@ -15,8 +15,27 @@
     background-color: green;
 }
 .seguir.is-following:hover {
-    background-color: red;
+    border: 1px solid red;
+    color: red;
+    background: transparent;
+    width: 100px;
+    transition: 0.3s ease all;
 }
+
+.seguir.is-following:hover .unFollow{
+    display: block;
+}
+.seguir.is-following:hover .isFollow{
+    display: none;
+}
+
 .seguir:hover {
-    background-color: aqua;
+    background-color: rgba(188, 211, 61, 0.767);
+}
+.isFollow {
+    color: black;
+}
+.unFollow {
+    color: red;
+    display: none;
 }
