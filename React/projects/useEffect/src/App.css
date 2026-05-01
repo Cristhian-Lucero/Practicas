@@ -1,0 +1,23 @@
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(3,max-content);
+  gap: 15px;
+  justify-content: center;
+}
+.cuadro {
+  border: 1px solid white ;
+  height: 30px;
+  width: 30px;
+}
+.noCuadro {
+  height: 30px;
+  width: 30px;
+}
+.turno {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+.turno {
+  color: aqua;
+}
