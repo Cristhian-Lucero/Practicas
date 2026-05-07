@@ -1,33 +1,62 @@
 import './App.css'
-import { useEffect, useRef, useState } from 'react'
 import { Movies } from './components/Movies'
 import { useMovies } from './hooks/useMovies'
+import { useBuscar } from './hooks/useBuscar'
+import { useCallback, useState } from 'react'
+import debounce from 'just-debounce-it'
 
-const datosURL = 'https://www.omdbapi.com/?apikey=4287ad07&s='
+const useOrdenar = () => {
+  const [ordenar, setOrdenar] = useState(false)
+  const handleSort = () => {
+    setOrdenar(!ordenar)
+  }
+  return { handleSort, ordenar }
+}
 
 function App() {
-  const { movies } = useMovies()
-  const inputRef = useRef()
+  const { handleSort, ordenar } = useOrdenar()
+  const { buscar, setBuscar, error } = useBuscar()
+  const { movies, getMovies, loading } = useMovies({ buscar, ordenar })
 
   const handleSubmit = (event) => {
-    event.preventDefault() // evita enviar nada(?
-    const value = inputRef.current.value
+    event.preventDefault() // bloquea comportamiento default
+    getMovies(buscar)
   }
+
+  //debounce
+  const debounceMovies = useCallback(() => {
+    debounce((buscar) => {
+      getMovies({ buscar })
+    }, 500)
+  }, [])
+
+  const handleChange = (event) => {
+    const nuevaBusqueda = event.target.value
+    setBuscar(nuevaBusqueda)
+    // le envia un objeto con propiedad buscar
+    debounceMovies(nuevaBusqueda)
+  }
+
   return (
     <>
       <div className="page">
         <header>
           <h1>Buscador de Películas</h1>
           <form className="form" onSubmit={handleSubmit}>
-            <input ref={inputRef} placeholder="Avengers, Matrix ..." />
+            <input
+              onChange={handleChange}
+              value={buscar}
+              name="query"
+              placeholder="Avengers, Matrix ..."
+            />
+            <input type="checkbox" onChange={handleSort} checked={ordenar} />
             <button className="boton" type="submit">
               Buscar
             </button>
           </form>
+          {error && <p className="error">{error}</p>}
         </header>
-        <main>
-          <Movies movies={movies} />
-        </main>
+        <main>{loading ? <p>Cargando...</p> : <Movies movies={movies} />}</main>
       </div>
     </>
   )
