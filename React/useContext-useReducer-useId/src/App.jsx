@@ -6,12 +6,11 @@ import { Header } from './components/Header'
 
 function App() {
   const [products] = useState(productosIniciales)
-  const [filtro, setFiltro] = useState({ categoria: 'all', priceMin: 0 })
-
+  const [filtro, setFiltro] = useState({ categoria: 'all', minPrice: 0 })
   const filtroProductos = (products) => {
     return products.filter((producto) => {
       return (
-        producto.price >= filtro.priceMin &&
+        producto.price >= filtro.minPrice &&
         (producto.category === filtro.categoria || filtro.categoria === 'all')
       )
     })
@@ -21,7 +20,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header changeFilters={setFiltro} />
       <Products products={productosFiltrados} />
     </>
   )
