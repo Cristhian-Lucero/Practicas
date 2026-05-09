@@ -10,16 +10,17 @@ export function CartProvier({ children }) {
     const productInCartIndex = cart.findIndex((item) => item.id === product.id)
     if (productInCartIndex >= 0) {
       const newCart = structuredClone(cart)
-      newCart[productInCartIndex] += 1
+      newCart[productInCartIndex].quantity += 1
       setCart(newCart)
+    } else {
+      setCart((prevState) => [
+        ...prevState,
+        {
+          ...product,
+          quantity: 1,
+        },
+      ])
     }
-    setCart((prevState) => [
-      ...prevState,
-      {
-        ...product,
-        quantity: 1,
-      },
-    ])
   }
   const removeFromCart = (product) => {
     setCart((prevState) => prevState.filter((item) => item.id !== product.id))
