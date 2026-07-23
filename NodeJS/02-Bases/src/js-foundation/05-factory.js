@@ -1,5 +1,5 @@
-const { getID } = require('../plugins/get-id') // libreria para generar IDs (uuid)
-const { getAge } = require('../plugins/get-age')
+const { getID } = require('../plugins/get-id.plugin')
+const { getAge } = require('../plugins/get-age.plugin')
 
 const buildPerson = ({ name, birthdate }) => {
   return {
