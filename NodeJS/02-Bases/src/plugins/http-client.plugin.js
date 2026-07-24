@@ -1,7 +1,10 @@
+const axios = require('axios') // Axios es una librería de cliente HTTP basada en promesas para el navegador y node.js
 const httClientPlugin = {
   get: async (url) => {
-    const response = await fetch(url)
-    return await response.json()
+    const { data } = await axios.get(url)
+    return data
+    // const response = await fetch(url)
+    // return await response.json()
   },
   post: async (url, body) => {},
   put: async (url, body) => {},
