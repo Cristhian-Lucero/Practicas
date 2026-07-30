@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "node --loader ts-node/esm ./src/app.logic.ts -b 8 -s",
-    "dev:nodemon": "nodemon -b 7",
+    "dev": "node --loader ts-node/esm ./src/app.ts -b 7 -s -n Prueba -d outputs/table",
+    "dev:nodemon": "nodemon -b 7 -s",
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && node dist/app.js"
   },

@@ -8,6 +8,6 @@ import { ServerApp } from "./presentation/server-app.js";
 })()
 
 async function main() {
-    const { b:base, l:limit, s:showTable} = yarg
-    ServerApp.run({ base, limit, showTable})
+    const { b:base, l:limit, s:showTable, d:destination, n:name} = yarg
+    ServerApp.run({ base, limit, showTable, destination, name})
 }

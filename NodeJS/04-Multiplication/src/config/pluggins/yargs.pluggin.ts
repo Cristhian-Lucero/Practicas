@@ -21,6 +21,18 @@ export const yarg = yargs(hideBin(process.argv))
     default: false,
     describe: 'Show multiplication table'
 })
+.option('n',{
+    alias: 'name',
+    type: 'string',
+    default: 'multiplication-table',
+    describe: 'File name'
+})
+.option('d',{
+    alias: 'destination',
+    type: 'string',
+    default: 'outputs',
+    describe: 'File destination'
+})
 .check((arg)=>{ 
     // check es un método de Yargs que se utiliza para validar los argumentos y opciones proporcionados por el usuario.
     // el argumento arg es un objeto que contiene los argumentos y opciones proporcionados por el usuario,
