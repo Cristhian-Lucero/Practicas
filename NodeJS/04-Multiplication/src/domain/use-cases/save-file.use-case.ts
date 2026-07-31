@@ -1,4 +1,4 @@
-import fs from 'fs' // No deberia usarse asi eel fs en arquitectura limpia
+import * as fs from 'fs' // usar import * as fs para compatibilidad con CommonJS/ESM
 export interface SaveFileUseCase {
     execute: (options:Options)=> boolean
 }

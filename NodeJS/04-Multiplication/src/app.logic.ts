@@ -1,4 +1,4 @@
-import fs from 'fs'
+import * as fs from 'fs'
 import { yarg } from './config/pluggins/yargs.pluggin.js'
 
 let Tabla = ''

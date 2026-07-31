@@ -13,8 +13,9 @@ export class CreateTable implements CreateTableUseCase{
     ){}
     execute({base,limit=10}: CreateTableOptions){
         let Tabla = ''
-        for (let index = 0; index < limit+1; index++) {
-            Tabla += `${base} x ${index} = ${base*index} \n`
+        for (let index = 1; index < limit+1; index++) {
+            Tabla += `${base} x ${index} = ${base*index}`
+            if (index<limit) Tabla += '\n'
         }
         return Tabla
     }
