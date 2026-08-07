@@ -1,5 +1,5 @@
 import * as fs from 'fs'
-import { yarg } from './config/pluggins/yargs.pluggin.js'
+import { yarg } from './config/pluggins/args.pluggin.js'
 
 let Tabla = ''
 const { b:base, l:limit, s:showTable} = yarg
