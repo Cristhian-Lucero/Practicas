@@ -15,7 +15,6 @@ describe('test server-app', () => {
         expect(typeof ServerApp.run).toBe('function')
     })
     test('should run ServerApp with options',() => {
-        /*
         const logSpy = jest.spyOn(console,'log')
         // Estos spies son para verificar que los métodos de CreateTable y SaveFile se llamen correctamente
         const createTableSpy = jest.spyOn(CreateTable.prototype,'execute')
@@ -35,7 +34,6 @@ describe('test server-app', () => {
             fileDestination: options.destination,
             fileName: options.name
         })
-        */
     })
     test('should run with custom values mocked',() => {
         const createMock = jest.fn().mockReturnValue('1 x 2 = 2')

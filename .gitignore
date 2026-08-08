@@ -3,3 +3,4 @@ node_modules
 plan-aprendizaje-proyecto-quinta.md
 *.log
 coverage/
+test-destination/

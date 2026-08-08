@@ -1,5 +1,5 @@
-import { yarg } from "./config/pluggins/args.pluggin.js";
-import { ServerApp } from "./presentation/server-app.js";
+import { yarg } from "./config/pluggins/args.pluggin";
+import { ServerApp } from "./presentation/server-app";
 // El "npm run dev" da muchos mensajes por problemas de versiones con respecto a la guia
 //console.log(process.argv)
 //console.log(yarg.b)
