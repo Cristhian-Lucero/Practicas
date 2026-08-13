@@ -2,7 +2,10 @@ import path from "path";
 import { LogDatasource } from "../../domain/datasources/log.datasourse";
 import { LogEntity, LogSeverityLevel } from "../../domain/entities/log.entity";
 import fs from 'fs';
-
+/**
+ * Datasource es la capa de abstracción que nos permite desacoplar la lógica de negocio de la implementación de la persistencia de datos.
+ * Lo que se hace aqui es la implementación de la persistencia de datos, es decir, como se guardan los datos, ya sea en una base de datos, un archivo, etc.
+ */
 export class FileSystemDatasouce implements LogDatasource {
 
     private readonly logPath = 'logs/'
